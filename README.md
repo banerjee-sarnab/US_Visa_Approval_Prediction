@@ -4,7 +4,7 @@ An end-to-end Machine Learning project that predicts the approval status of US v
 
 ---
 
-## 🚀 Overview
+## Overview
 
 This project builds a predictive model to classify whether a US visa application will be **Approved or Denied** based on applicant and case-related features.
 
@@ -18,7 +18,7 @@ It also demonstrates a complete MLOps pipeline:
 
 ---
 
-## 🧠 Problem Statement
+## Problem Statement
 
 Visa approval decisions depend on multiple factors such as:
 
@@ -29,7 +29,7 @@ Visa approval decisions depend on multiple factors such as:
 
 ---
 
-## 🏗️ Project Architecture
+## Project Architecture
 
 ```
 User → Web/API → Docker Container → ML Model
@@ -41,7 +41,7 @@ User → Web/API → Docker Container → ML Model
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 ### 🔹 Machine Learning
 
@@ -63,7 +63,7 @@ User → Web/API → Docker Container → ML Model
 
 ---
 
-## 📦 Features
+## Features
 
 - ✅ End-to-end ML pipeline (training → prediction)
 - ✅ Modular code structure
@@ -74,7 +74,7 @@ User → Web/API → Docker Container → ML Model
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 US_Visa/
@@ -91,7 +91,7 @@ US_Visa/
 
 ---
 
-## 🔄 CI/CD Workflow
+## CI/CD Workflow
 
 1. Push code to `main` branch
 2. GitHub Actions:
@@ -103,7 +103,7 @@ US_Visa/
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 The application is deployed on AWS EC2 and exposed via:
 
@@ -113,7 +113,7 @@ http://3.235.99.186:8080/
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 Set the following variables:
 
@@ -124,7 +124,7 @@ Set the following variables:
 
 ---
 
-## ▶️ How to Run Locally
+## How to Run Locally
 
 ### 1. Clone the repository
 
