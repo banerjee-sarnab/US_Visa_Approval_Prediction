@@ -65,12 +65,12 @@ User → Web/API → Docker Container → ML Model
 
 ## Features
 
-- ✅ End-to-end ML pipeline (training → prediction)
-- ✅ Modular code structure
-- ✅ Dockerized application
-- ✅ CI/CD pipeline for automated deployment
-- ✅ Cloud-based model serving
-- ✅ Real-time predictions via API
+- End-to-end ML pipeline (training → prediction)
+- Modular code structure
+- Dockerized application
+- CI/CD pipeline for automated deployment
+- Cloud-based model serving
+- Real-time predictions via API
 
 ---
 
