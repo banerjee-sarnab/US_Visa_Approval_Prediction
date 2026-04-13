@@ -103,16 +103,6 @@ US_Visa/
 
 ---
 
-## Deployment
-
-The application is deployed on AWS EC2 and exposed via:
-
-```
-http://3.235.99.186:8080/
-```
-
----
-
 ## Environment Variables
 
 Set the following variables:
