@@ -82,7 +82,7 @@ User Request ────▶ │  FastAPI App  │
 ---
 
 ## Project Structure
-
+```
 US_Visa/
 │
 ├── components/             # Data ingestion, transformation, model training
@@ -94,7 +94,7 @@ US_Visa/
 ├── requirements.txt        # Python dependencies
 └── .github/
 └── workflows/          # GitHub Actions CI/CD pipeline
-
+```
 ---
 
 ## CI/CD Workflow
