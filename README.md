@@ -47,34 +47,36 @@ US visa approval decisions hinge on a combination of factors that are often opaq
 
 ## Architecture
 
+```
 ┌──────────────┐
-  User Request ────▶│  FastAPI App  │
-                    └──────┬───────┘
-                           │
-                    ┌──────▼───────┐
-                    │   ML Model   │◀──── Model Artifacts (AWS S3)
-                    └──────┬───────┘
-                           │
-                    ┌──────▼───────┐
-                    │Docker Container│
-                    └──────┬───────┘
-                           │
-                    ┌──────▼───────┐
-                    │  AWS EC2     │◀──── Image Pull (AWS ECR)
-                    └──────────────┘
+User Request ────▶│  FastAPI App  │
+                  └──────┬───────┘
+                         │
+                  ┌──────▼───────┐
+                  │   ML Model   │◀──── Model Artifacts (AWS S3)
+                  └──────┬───────┘
+                         │
+                  ┌──────▼───────┐
+                  │Docker Container│
+                  └──────┬───────┘
+                         │
+                  ┌──────▼───────┐
+                  │   AWS EC2    │◀──── Image Pull (AWS ECR)
+                  └──────────────┘
+```
 
 
 ---
 
 ## Tech Stack
 
-**Machine Learning**
+**Machine Learning:**
 `Python` `Scikit-learn` `Pandas` `NumPy`
 
-**Backend & API**
+**Backend & API:**
 `FastAPI` `Uvicorn`
 
-**MLOps & Infrastructure**
+**MLOps & Infrastructure:**
 `Docker` `GitHub Actions` `AWS EC2` `AWS ECR` `AWS S3` `MongoDB`
 
 ---
@@ -96,6 +98,7 @@ US_Visa/
 ---
 
 ## CI/CD Workflow
+```
 Push to main
 │
 ▼
@@ -106,6 +109,8 @@ GitHub Actions Triggered
 ├──▶ Push Image to AWS ECR
 │
 └──▶ EC2 Pulls Latest Image & Restarts Container
+
+```
 
 Every push to `main` triggers a fully automated build → push → deploy cycle with **zero manual intervention**.
 
@@ -142,6 +147,15 @@ pip install -r requirements.txt
 
 ### 4. Configure Environment Variables
 
+
+| Variable | Description |
+|---|---|
+| `AWS_ACCESS_KEY_ID` | AWS IAM access key |
+| `AWS_SECRET_ACCESS_KEY` | AWS IAM secret key |
+| `AWS_DEFAULT_REGION` | AWS region (e.g. `us-east-1`) |
+| `MONGODB_URL` | MongoDB connection string |
+
+
 ```bash
 export AWS_ACCESS_KEY_ID=your_key
 export AWS_SECRET_ACCESS_KEY=your_secret
@@ -158,15 +172,6 @@ python app.py
 API will be live at `http://localhost:8080`
 
 ---
-
-## Environment Variables
-
-| Variable | Description |
-|---|---|
-| `AWS_ACCESS_KEY_ID` | AWS IAM access key |
-| `AWS_SECRET_ACCESS_KEY` | AWS IAM secret key |
-| `AWS_DEFAULT_REGION` | AWS region (e.g. `us-east-1`) |
-| `MONGODB_URL` | MongoDB connection string |
 
 ---
 
