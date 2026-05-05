@@ -34,12 +34,12 @@ This project predicts whether a US visa application will be **Approved or Denied
 
 ## Problem Statement
 
-US visa approval decisions hinge on a combination of factors that are often opaque. This system leverages historical data to make **data-driven predictions** based on:
+US visa decisions involve dozens of complex, interrelated factors. This system cuts through that complexity using historical patterns and machine learning, enabling data-driven, transparent predictions based on:
 
-- Applicant profile & background
-- Employer details & credibility
-- Prevailing wage & job information
-- Case status history
+- **Applicant profile** — education, background
+- **Employer details** — company credibility, job role
+- **Wage data** — prevailing wage vs offered wage
+- **Case history** — prior application outcomes
 ---
 
 ## Architecture
@@ -82,16 +82,14 @@ User Request ────▶ │  FastAPI App  │
 ```
 US_Visa/
 │
-├── components/             # Data ingestion, transformation, model training
-├── pipeline/               # Training & prediction pipeline orchestration
-├── entity/                 # Config entities & data schema classes
-├── Cloud_Storage/          # AWS S3 read/write interaction
-├── app.py                  # FastAPI entry point
-├── Dockerfile              # Container build instructions
-├── requirements.txt        # Python dependencies
-└── .github/
-└── workflows/          # GitHub Actions CI/CD pipeline
-```
+├── components/        # Core ML logic: data ingestion, transformation, model training
+├── pipeline/          # Orchestrates training and prediction workflows
+├── entity/            # Data schema and configuration classes
+├── Cloud_Storage/     # Handles reading/writing model artifacts from AWS S3
+├── app.py             # FastAPI application entry point
+├── Dockerfile         # Defines the container image
+├── requirements.txt   # All Python dependencies
+└── .github/workflows/ # GitHub Actions CI/CD automation scripts
 ---
 
 ## CI/CD Workflow
@@ -117,20 +115,25 @@ GitHub Actions Triggered
 - AWS account with configured IAM credentials
 - MongoDB connection URI
 
-### 1. Clone the Repository and go to the desired folder
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/banerjee-sarnab/US_Visa_Approval_Prediction.git
+```
+
+### 2. Go to the desired folder
+
+```bash
 cd US_Visa_Approval_Prediction
 ```
 
-### 2. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Configure Environment Variables
+### 4. Configure Environment Variables
 
 | Variable | Description |
 |---|---|
