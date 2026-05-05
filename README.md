@@ -90,6 +90,7 @@ US_Visa/
 ├── Dockerfile         # Defines the container image
 ├── requirements.txt   # All Python dependencies
 └── .github/workflows/ # GitHub Actions CI/CD automation scripts
+```
 ---
 
 ## CI/CD Workflow
