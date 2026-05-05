@@ -6,23 +6,21 @@
 
 ## Table of Contents
 
-- [Overview](#-overview)
-- [Problem Statement](#-problem-statement)
-- [Architecture](#-architecture)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [CI/CD Workflow](#-cicd-workflow)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [API Usage](#-api-usage)
+1. Overview
+2. Problem Statement
+3. Architecture
+4. Tech Stack
+5. Project Structure
+6. CI/CD Workflow
+7. Getting Started
+8. Environment Variables
+9. API Usage
 
 ---
 
 ## Overview
 
-This project predicts whether a US visa application will be **Approved or Denied** based on structured applicant and case-level features.
-
-Beyond the ML model, it demonstrates a **production-grade MLOps pipeline**:
+This project predicts whether a US visa application will be **Approved or Denied** based on applicant and case-level features.
 
 | Capability | Tool |
 |---|---|
@@ -30,7 +28,7 @@ Beyond the ML model, it demonstrates a **production-grade MLOps pipeline**:
 | REST API | FastAPI |
 | Containerization | Docker |
 | CI/CD Automation | GitHub Actions |
-| Cloud Deployment | AWS EC2 + ECR + S3 |
+| Cloud Deployment | AWS (EC2 + ECR + S3) |
 
 ---
 
@@ -42,7 +40,6 @@ US visa approval decisions hinge on a combination of factors that are often opaq
 - Employer details & credibility
 - Prevailing wage & job information
 - Case status history
-
 ---
 
 ## Architecture
@@ -112,10 +109,6 @@ GitHub Actions Triggered
 
 ```
 
-Every push to `main` triggers a fully automated build → push → deploy cycle with **zero manual intervention**.
-
----
-
 ## Getting Started
 
 ### Prerequisites
@@ -124,29 +117,20 @@ Every push to `main` triggers a fully automated build → push → deploy cycle 
 - AWS account with configured IAM credentials
 - MongoDB connection URI
 
-### 1. Clone the Repository
+### 1. Clone the Repository and go to the desired folder
 
 ```bash
 git clone https://github.com/banerjee-sarnab/US_Visa_Approval_Prediction.git
 cd US_Visa_Approval_Prediction
 ```
 
-### 2. Set Up Virtual Environment
-
-```bash
-python -m venv venv
-source venv/bin/activate        # Linux/Mac
-venv\Scripts\activate           # Windows
-```
-
-### 3. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configure Environment Variables
-
+### 3. Configure Environment Variables
 
 | Variable | Description |
 |---|---|
@@ -163,15 +147,10 @@ export AWS_DEFAULT_REGION=your_region
 export MONGODB_URL=your_mongo_uri
 ```
 
-### 5. Run the Application
+### 4. Run the Application
 
 ```bash
 python app.py
 ```
 
-API will be live at `http://localhost:8080`
-
----
-
----
-
+The app will be live at `http://localhost:8080`
